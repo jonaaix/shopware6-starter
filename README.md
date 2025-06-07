@@ -201,6 +201,15 @@ bucket/<dev or prod>/sw6/<public or private>
 This layout enables consistent handling of static assets, access control, and syncing routines between development and
 production.
 
+Thus update the path in your `.env` file according to your environment (`dev` or `prod`):
+```env
+S3_ROOT_DIR_PUBLIC=dev/sw6/public
+S3_ROOT_DIR_PRIVATE=dev/sw6/private
+
+S3_ROOT_DIR_PUBLIC=prod/sw6/public
+S3_ROOT_DIR_PRIVATE=prod/sw6/private
+```
+
 ### Enable CDN for Global Performance
 
 We recommend using DigitalOcean’s **CDN feature** for better international performance. Simply enable CDN for your space
