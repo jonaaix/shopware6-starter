@@ -1,0 +1,18 @@
+{
+   "name": "shop-theme/shop-theme",
+   "description": "A custom Shopware theme.",
+   "type": "shopware-platform-plugin",
+   "license": "MIT",
+   "autoload": {
+      "psr-4": {
+         "ShopTheme\\": "src/"
+      }
+   },
+   "extra": {
+      "shopware-plugin-class": "ShopTheme\\ShopTheme",
+      "label": {
+         "de-DE": "My Shopware Theme",
+         "en-GB": "My Shopware Theme"
+      }
+   }
+}

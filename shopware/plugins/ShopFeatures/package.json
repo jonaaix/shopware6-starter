@@ -1,0 +1,14 @@
+{
+  "name": "shop-features-plugin",
+  "version": "1.0.0",
+  "private": true,
+   "scripts": {
+      "watch-features": "chokidar 'src/Resources/app/storefront/src/**/*' -c 'npm run build-and-compile'",
+      "build": "vite build",
+      "build-and-compile": "vite build && docker compose exec php bin/console theme:compile"
+   },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "vite": "^5.0.0"
+  }
+}

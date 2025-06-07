@@ -1,0 +1,23 @@
+# IDE and editor-specific settings
+/.fleet
+/.idea
+/.vscode
+
+# macOS system files
+.DS_Store
+
+# Placeholder files
+!.gitkeep
+
+# Environment configuration
+.env
+
+# Docker Compose
+compose.yaml
+compose.spider.yaml
+
+# File sharing
+file-share/**
+!file-share/.gitkeep
+!file-share/import
+!file-share/import/.gitkeep

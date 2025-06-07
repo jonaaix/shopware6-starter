@@ -1,0 +1,27 @@
+{
+   "name": "shop-templates/shop-templates",
+   "description": "A plugin to customize the Shopware templates",
+   "authors": [
+      {
+         "name": "Shopware Starter"
+      }
+   ],
+   "type": "shopware-platform-plugin",
+   "version": "1.0.0",
+   "license": "MIT",
+   "require": {
+      "shopware/core": "~6.6.0"
+   },
+   "extra": {
+      "shopware-plugin-class": "ShopTemplates\\ShopTemplates\\ShopTemplatesPlugin",
+      "label": {
+         "de-DE": "Shop Templates",
+         "en-GB": "Shop Templates"
+      }
+   },
+   "autoload": {
+      "psr-4": {
+         "ShopTemplates\\ShopTemplates\\": "src/"
+      }
+   }
+}

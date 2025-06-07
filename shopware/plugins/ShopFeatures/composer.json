@@ -1,0 +1,27 @@
+{
+   "name": "shop-features/shop-features",
+   "description": "A plugin to extend Shopware 6 with custom functionality.",
+   "authors": [
+      {
+         "name": "Shopware Starter"
+      }
+   ],
+   "type": "shopware-platform-plugin",
+   "version": "1.0.0",
+   "license": "MIT",
+   "require": {
+      "shopware/core": "~6.6.0"
+   },
+   "extra": {
+      "shopware-plugin-class": "ShopFeatures\\ShopFeatures\\ShopFeaturesPlugin",
+      "label": {
+         "de-DE": "Shop Features",
+         "en-GB": "Shop Features"
+      }
+   },
+   "autoload": {
+      "psr-4": {
+         "ShopFeatures\\ShopFeatures\\": "src/"
+      }
+   }
+}

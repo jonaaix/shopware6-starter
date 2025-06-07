@@ -1,0 +1,18 @@
+# Map to: config/packages/z-framework.yaml
+
+framework:
+    trusted_proxies: '127.0.0.1,REMOTE_ADDR'
+
+    # Send mails via queue
+    mailer:
+        message_bus: 'messenger.default_bus'
+
+    lock: "%env(string:REDIS_URL)%/4"
+
+    session:
+        cookie_lifetime: 31536000
+        handler_id: "%env(string:REDIS_URL)%/0"
+
+    # Symfony Secrets
+    secrets:
+        enabled: false

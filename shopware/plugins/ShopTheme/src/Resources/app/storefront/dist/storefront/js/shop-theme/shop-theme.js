@@ -1,0 +1,1 @@
+(function(){"use strict";document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".checkout-card textarea#customerComment");e&&(e.rows=8)}),console.log(Object.assign({"./js/checkout-customer-comment.js":Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"}))}))})();

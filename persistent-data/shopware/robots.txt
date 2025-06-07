@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: */account/
+Disallow: */checkout/
+Disallow: */widgets/
+Disallow: */navigation/
+Disallow: */bundles/
+Disallow: /_proxy/
+
+Disallow: */privacy
+Disallow: */terms-of-service
+
+Sitemap: https://domain.com/sitemap.xml

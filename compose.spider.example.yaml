@@ -1,0 +1,16 @@
+services:
+    spider_1:
+        container_name: sw_spider_1
+        image: shopware6/spider
+        environment:
+            - SITEMAP_DOMAIN=domain.com
+            - SITEMAP_URL=https://domain.com/sitemap.xml
+        restart: unless-stopped
+
+    spider_2:
+        container_name: sw_spider_2
+        image: shopware6/spider
+        environment:
+            - SITEMAP_DOMAIN=domain.com
+            - SITEMAP_URL=https://domain.com/de/sitemap.xml
+        restart: unless-stopped

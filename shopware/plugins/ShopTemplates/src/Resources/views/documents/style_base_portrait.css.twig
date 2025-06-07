@@ -1,0 +1,17 @@
+{% sw_extends '@Framework/documents/style_base_portrait.css.twig' %}
+
+{% block document_style %}
+{{ parent() }}
+
+body {
+   font-family: Inter, Roboto, Arial, Verdana, sans-serif;
+}
+
+.logo {
+   max-width: 250px;
+}
+
+.letter-header {
+   margin-bottom: 1.5cm;
+}
+{% endblock %}

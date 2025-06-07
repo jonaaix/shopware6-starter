@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+
+{% block layout_head_meta_tags_charset %}
+   {{ parent() }}
+
+   {# Add Favicon #}
+   <link rel="icon" type="image/png" href="{{ theme_config('sw-logo-favicon') }}" />
+
+   {# Add Google Tag Manager #}
+   <!-- Insert Google Tag Manager <script> here -->
+{% endblock %}
+
+
+{# FIX CANONICAL HEADER #}
+{# See: https://github.com/shopware/shopware/pull/9936 #}
+{% block layout_head_canonical %}
+   {% if page.metaInformation.canonical %}
+      {% if app.request.query.get('p') %}
+         <link rel="canonical" href="{{ page.metaInformation.canonical }}?p={{ app.request.query.get('p') }}" />
+      {% else %}
+         <link rel="canonical" href="{{ page.metaInformation.canonical }}">
+      {% endif %}
+   {% endif %}
+{% endblock %}

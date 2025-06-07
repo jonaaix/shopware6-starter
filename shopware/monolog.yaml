@@ -1,0 +1,8 @@
+# Map to: config/packages/z-monolog.yaml
+monolog:
+    handlers:
+        main:
+            level: error
+            buffer_size: 30
+        business_event_handler_buffer:
+            level: error

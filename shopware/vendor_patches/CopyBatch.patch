@@ -1,0 +1,23 @@
+diff --git a/Framework/Adapter/Filesystem/Plugin/CopyBatch.php b/Framework/Adapter/Filesystem/Plugin/CopyBatch.php
+index c4aa48d..2e00935 100644
+--- a/Framework/Adapter/Filesystem/Plugin/CopyBatch.php
++++ b/Framework/Adapter/Filesystem/Plugin/CopyBatch.php
+@@ -12,12 +12,12 @@ class CopyBatch
+ {
+     public static function copy(FilesystemOperator $filesystem, CopyBatchInput ...$files): void
+     {
+-        $adapter = self::getAdapter($filesystem);
+-        if ($adapter instanceof WriteBatchInterface) {
+-            $adapter->writeBatch(...$files);
+-
+-            return;
+-        }
++        /*$adapter = self::getAdapter($filesystem);
++        if ($adapter instanceof WriteBatchInterface) {
++            $adapter->writeBatch(...$files);
++
++            return;
++        }*/
+
+         foreach ($files as $batchInput) {
+             $handle = $batchInput->getSourceFile();

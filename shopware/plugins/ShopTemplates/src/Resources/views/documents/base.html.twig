@@ -1,0 +1,14 @@
+{% sw_extends '@Framework/documents/base.html.twig' %}
+
+{% block document_font_links %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{# DATE BOLD AND ADD TOP SPACING #}
+{% block document_side_info_date %}
+   <tr>
+      <td style="padding-top: 16px; font-weight: bold;">
+         {{ 'document.date'|trans({'%date%': config.documentDate|format_date('medium', locale=locale)})|sw_sanitize }}
+      </td>
+   </tr>
+{% endblock %}

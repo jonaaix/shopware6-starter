@@ -1,0 +1,142 @@
+# Map to: config/packages/z-shopware.yaml
+shopware:
+    api:
+        # Uses the APP_SECRET value as the base key for generating API JWT tokens
+        jwt_key:
+            use_app_secret: true
+
+    admin_worker:
+        enable_admin_worker: false
+        # Disables background polling for admin notifications to reduce server load
+        enable_notification_worker: false
+        # Disables automatic background updates of queue statistics in the admin dashboard
+        enable_queue_stats_worker: false
+
+    # Auto Update
+    auto_update:
+        enabled: false
+
+    # First Run Wizard
+    store:
+        frw: false
+
+    mail:
+        update_mail_variables_on_send: false
+
+    # Enabling cache compression with zstd
+    cart:
+        compress: true
+        compression_method: zstd
+        redis_url: "%env(string:REDIS_URL)%/3"
+
+    # Enabling cache compression with zstd
+    cache:
+        cache_compression: true
+        cache_compression_method: zstd
+        tagging:
+            each_config: false
+            each_snippet: false
+            each_theme_config: false
+
+    http_cache:
+        reverse_proxy:
+            enabled: true
+            use_varnish_xkey: true
+            hosts:
+                - 'varnish'
+
+    increment:
+        user_activity:
+            type: "redis"
+            config:
+                url: "%env(string:REDIS_URL)%/1"
+
+        message_queue:
+            type: "redis"
+            config:
+                url: "%env(string:REDIS_URL)%/2"
+
+    filesystem:
+        private:
+            type: "amazon-s3"
+            visibility: "private"
+            config:
+                visibility: "private"
+                bucket: "%env(string:S3_BUCKET)%"
+                region: "%env(string:S3_REGION)%"
+                endpoint: "%env(string:S3_ENDPOINT)%"
+                root: "%env(string:S3_ROOT_DIR_PRIVATE)%"
+                credentials:
+                    key: "%env(string:S3_KEY)%"
+                    secret: "%env(string:S3_SECRET)%"
+
+        public:
+            type: "amazon-s3"
+            url: "%env(string:S3_URL)%/%env(string:S3_ROOT_DIR_PUBLIC)%"
+            visibility: "public"
+            config:
+                bucket: "%env(string:S3_BUCKET)%"
+                region: "%env(string:S3_REGION)%"
+                endpoint: "%env(string:S3_ENDPOINT)%"
+                root: "%env(string:S3_ROOT_DIR_PUBLIC)%"
+                credentials:
+                    key: "%env(string:S3_KEY)%"
+                    secret: "%env(string:S3_SECRET)%"
+
+        theme:
+            type: "amazon-s3"
+            url: "%env(string:S3_URL)%/%env(string:S3_ROOT_DIR_PUBLIC)%"
+            visibility: "public"
+            config:
+                bucket: "%env(string:S3_BUCKET)%"
+                region: "%env(string:S3_REGION)%"
+                endpoint: "%env(string:S3_ENDPOINT)%"
+                root: "%env(string:S3_ROOT_DIR_PUBLIC)%"
+                credentials:
+                    key: "%env(string:S3_KEY)%"
+                    secret: "%env(string:S3_SECRET)%"
+
+        asset:
+            type: "amazon-s3"
+            url: "%env(string:S3_URL)%/%env(string:S3_ROOT_DIR_PUBLIC)%"
+            visibility: "public"
+            config:
+                bucket: "%env(string:S3_BUCKET)%"
+                region: "%env(string:S3_REGION)%"
+                endpoint: "%env(string:S3_ENDPOINT)%"
+                root: "%env(string:S3_ROOT_DIR_PUBLIC)%"
+                credentials:
+                    key: "%env(string:S3_KEY)%"
+                    secret: "%env(string:S3_SECRET)%"
+
+        sitemap:
+            type: "amazon-s3"
+            url: "%env(string:S3_URL)%/%env(string:S3_ROOT_DIR_PUBLIC)%"
+            visibility: "public"
+            config:
+                bucket: "%env(string:S3_BUCKET)%"
+                region: "%env(string:S3_REGION)%"
+                endpoint: "%env(string:S3_ENDPOINT)%"
+                root: "%env(string:S3_ROOT_DIR_PUBLIC)%"
+                credentials:
+                    key: "%env(string:S3_KEY)%"
+                    secret: "%env(string:S3_SECRET)%"
+
+        # The performance for critical files like theme/asset/sitemap appeared to be to slow with s3, so you might want to use local storage for these
+        # theme:
+        #     type: "local"
+        #     url: ""
+        #     config:
+        #         root: "%kernel.project_dir%/public"
+        #
+        # asset:
+        #     type: "local"
+        #     url: ""
+        #     config:
+        #         root: "%kernel.project_dir%/public"
+        #
+        # sitemap:
+        #     type: "local"
+        #     url: ""
+        #     config:
+        #         root: "%kernel.project_dir%/public"

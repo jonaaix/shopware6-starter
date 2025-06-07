@@ -1,0 +1,10 @@
+{
+   "printWidth": 150,
+   "tabWidth": 3,
+   "singleQuote": true,
+   "trailingCommaPHP": true,
+   "phpVersion": "8.2",
+   "braceStyle": "1tbs",
+   "bracketSameLine": true,
+   "plugins": []
+}

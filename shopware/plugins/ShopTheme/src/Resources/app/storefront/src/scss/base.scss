@@ -1,0 +1,8 @@
+// Fonts: You can place you fonts in the `src/assets/fonts` directory. Then load the index.css file.
+// @import '#{$app-css-relative-asset-path}/brand-font/font-index.css';
+
+/// THEME SNIPPETS ///
+@import "snippets/variables";
+@import "snippets/body";
+@import "snippets/footer";
+@import "snippets/language-menu";

@@ -1,0 +1,21 @@
+# Map to: config/packages/z-dev-shopware.yaml
+shopware:
+    filesystem:
+        # Theme and Sitemap switched to local for development for faster performance
+        theme:
+            type: "local"
+            url: ""
+            config:
+                root: "%kernel.project_dir%/public"
+
+        asset:
+            type: "local"
+            url: ""
+            config:
+                root: "%kernel.project_dir%/public"
+
+        sitemap:
+            type: "local"
+            url: ""
+            config:
+                root: "%kernel.project_dir%/public"

@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../Administration/Resources/schema/config.xsd">
+   <card>
+      <title>Shop Features Plugin</title>
+      <!-- <input-field> -->
+      <!--    <name>exampleField</name> -->
+      <!--    <label>Example Field</label> -->
+      <!--    <type>text</type> -->
+      <!--    <defaultValue>Default Value</defaultValue> -->
+      <!-- </input-field> -->
+   </card>
+</config>
