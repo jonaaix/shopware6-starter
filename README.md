@@ -12,8 +12,8 @@ based on this template.
 ### Clone the Repository
 
 ```shell
-git clone --depth=1 --branch=main <url>/shopware-starter.git \
-&& cd shopware-starter && rm -rf .git && git init
+git clone --depth=1 --branch=main https://github.com/btxtiger/shopware6-starter.git shopware6 \
+&& cd shopware6 && rm -rf .git && git init
 ```
 
 ### Initial Steps
