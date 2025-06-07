@@ -431,6 +431,31 @@ bin/console cache:clear
 
 ## Helpful Tools & Migrations 🧰
 
+### 🧾 Aliases
+
+The Shopware Docker image includes several helpful aliases for developer convenience:
+
+### `bc` – shorthand for `bin/console`
+
+```shell
+bc cache:clear
+```
+
+### `pa` – alternative alias for when you're also mixing up frameworks
+
+```shell
+pa cache:clear
+```
+
+### `ll` – list directory contents with details
+
+```shell
+ll
+```
+
+These are available by default when working inside the `php` container.
+
+
 ### 📦 Migrate local files to S3
 
 Install `rclone` on the Shopware server (or container) that has access to the `files/` directories. Follow the rclone
