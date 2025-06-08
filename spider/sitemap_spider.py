@@ -36,6 +36,7 @@ class SitemapSpider(scrapy.Spider):
         data = Selector(text=sitemap.body, type="xml").xpath('//ns:loc/text()', namespaces={"ns": "http://www.sitemaps.org/schemas/sitemap/0.9"})
         urls = data.getall()
 
+        random.shuffle(urls)
         for url in urls:
             time.sleep(2.8)
             yield scrapy.Request(url=url, callback=self.parse_page)
