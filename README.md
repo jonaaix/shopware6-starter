@@ -238,6 +238,7 @@ sudo apt install pipx -y && pipx install s3cmd && grep -qxF 'export PATH="$HOME/
 ### 1. Setup rclone
 
 Create the file `~/.config/rclone/rclone.conf` with the following content:
+> 🛠️ `mkdir -p ~/.config/rclone && nano ~/.config/rclone/rclone.conf`
 
 ```ini
 [shopware]
@@ -252,6 +253,8 @@ endpoint = fra1.digitaloceanspaces.com
 ### 2. Setup s3cmd
 
 Create the file `~/.s3cfg-shopware` with the following content (used for listing and permission management):
+
+> 🛠️ `mkdir -p ~/.s3cfg && nano ~/.s3cfg-shopware`
 
 ```ini
 [default]
