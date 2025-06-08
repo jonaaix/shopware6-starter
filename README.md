@@ -117,7 +117,7 @@ docker compose up -d --force-recreate php
 * Then run the following command **from the host**, not inside the container:
 
 ```shell
-./docker/init/mysql-import-shopware.sh
+./scripts/mysql-import-shopware.sh
 ```
 
 * After the import is completed, open a shell inside the container:
@@ -483,7 +483,7 @@ rclone sync shopware:sw-bucket/sw6-pub shopware:sw-bucket/prod/sw6/public --dele
 If public files return a **403 Forbidden**, ensure their ACL is correctly set:
 
 ```shell
-s3cmd setacl s3://sw-bucket/dev/sw6/public/ --acl-public --recursive || true
+s3cmd --config "$HOME/.s3cfg-shopware" setacl s3://wsu-media/prod/sw6/public/ --acl-public --recursive --verbose
 ```
 
 > ⚠️ **Do NOT apply public ACLs to `/sw6/private/` paths!**
