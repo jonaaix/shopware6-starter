@@ -227,10 +227,12 @@ S3_URL=https://bucket.fra1.cdn.digitaloceanspaces.com
 
 ### Required Tools
 
-Install the following tools on your server:
+Install `rclone` and `s3cmd` on your server:
 
 ```shell
-sudo apt-get install -y rclone s3cmd
+curl https://rclone.org/install.sh | sudo bash
+
+sudo apt install pipx -y && pipx install s3cmd && grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
 ```
 
 ### 1. Setup rclone
