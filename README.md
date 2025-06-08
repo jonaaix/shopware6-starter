@@ -254,7 +254,7 @@ endpoint = fra1.digitaloceanspaces.com
 
 Create the file `~/.s3cfg-shopware` with the following content (used for listing and permission management):
 
-> 🛠️ `mkdir -p ~/.s3cfg && nano ~/.s3cfg-shopware`
+> 🛠️ `nano ~/.s3cfg-shopware`
 
 ```ini
 [default]
