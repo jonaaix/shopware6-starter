@@ -464,7 +464,7 @@ Install `rclone` on the Shopware server (or container) that has access to the `f
 setup instructions as described earlier, then run:
 
 ```shell
-rclone sync "files/media" "do:sw-bucket/prod/sw6/private/media" --delete-excluded --stats=1s --transfers 32 --checkers 64 --s3-acl private
+rclone sync "files/media" "shopware:sw-bucket/prod/sw6/private/media" --delete-excluded --stats=1s --transfers 32 --checkers 64 --s3-acl private
 ```
 
 ### 🔁 Migrate existing flat S3 structure to the dev/prod model
@@ -472,7 +472,7 @@ rclone sync "files/media" "do:sw-bucket/prod/sw6/private/media" --delete-exclude
 If you're already using a flat S3 layout, convert it to the structure used in this template:
 
 ```shell
-rclone sync do:sw-bucket/sw6-pub do:sw-bucket/prod/sw6/public --delete-excluded --progress --transfers 32 --checkers 64 --s3-acl public-read
+rclone sync shopware:sw-bucket/sw6-pub shopware:sw-bucket/prod/sw6/public --delete-excluded --progress --transfers 32 --checkers 64 --s3-acl public-read
 ```
 
 ### 🚫 Fix missing public ACLs (403 errors)
