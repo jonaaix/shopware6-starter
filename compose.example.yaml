@@ -15,7 +15,7 @@ services:
 
             # Other
             - ./file-share:/z-file-share
-            - ./.env:/var/www/html/.env.local:ro
+            - ./.env:/var/www/html/.env:ro
             - ./persistent-data/shopware/composer.json:/var/www/html/composer.json:rw
             - ./persistent-data/shopware/auth.json:/var/www/html/auth.json:rw
             - ./persistent-data/shopware/robots.txt:/var/www/html/public/robots.txt:ro
