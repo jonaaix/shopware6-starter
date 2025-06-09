@@ -233,6 +233,7 @@ Install `rclone` and `s3cmd` on your server:
 curl https://rclone.org/install.sh | sudo bash
 
 sudo apt install pipx -y && pipx install s3cmd && grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+sudo ln -s /home/$USER/.local/bin/s3cmd /usr/local/bin/s3cmd
 ```
 
 ### 1. Setup rclone
