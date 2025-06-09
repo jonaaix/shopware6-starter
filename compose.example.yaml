@@ -1,6 +1,5 @@
 services:
     php:
-        container_name: sw_php
         image: shopware6/php:8.3
         environment:
             PHP_MEMORY_LIMIT: 2G
@@ -52,7 +51,6 @@ services:
 
 
     varnish:
-        container_name: sw_varnish
         image: shopware6/varnish
         environment:
             SHOPWARE_BACKEND_HOST: php
@@ -73,7 +71,6 @@ services:
 
 
     mysql:
-        container_name: sw_mysql
         image: mysql:8.3
         # mysql:8.4 still causes issues with Shopware
         command:
@@ -108,7 +105,6 @@ services:
 
 
     redis:
-        container_name: sw_redis
         image: redis:7
         command: redis-server --requirepass ${REDIS_PASSWORD}
         volumes:
@@ -119,7 +115,6 @@ services:
 
 
     rabbitmq:
-        container_name: sw_rabbitmq
         image: rabbitmq:4-alpine
         environment:
             - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
@@ -132,7 +127,6 @@ services:
 
 
     search:
-        container_name: sw_opensearch
         image: opensearchproject/opensearch:2
         deploy:
             resources:
@@ -151,7 +145,6 @@ services:
 
 
     pma:
-        container_name: sw_pma
         image: phpmyadmin:latest
         environment:
             PMA_HOST: mysql
@@ -169,7 +162,6 @@ services:
 
 
 #    wp:
-#        container_name: sw_wp
 #        image: wordpress:php8.4-apache
 #        restart: unless-stopped
 #        depends_on:
@@ -196,7 +188,6 @@ services:
 #
 #
 #    wp_files:
-#        container_name: sw_wp_files
 #        image: filebrowser/filebrowser:latest
 #        restart: unless-stopped
 #        depends_on:
