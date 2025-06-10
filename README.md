@@ -498,6 +498,13 @@ issues manually:
 php bin/console system:configure-shop --shop-locale=en-GB
 ```
 
+### Update all domains for dev shop clone
+If you cloned a production shop to a development environment, you may need to update all domains in the database:
+```sql
+UPDATE sales_channel_domain
+SET url = REPLACE(url, 'domain.com', 'localhost:8000')
+WHERE url LIKE '%domain.com%';
+```
 ---
 
 ## WordPress 📝
