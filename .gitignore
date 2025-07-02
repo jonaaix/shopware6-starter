@@ -15,6 +15,7 @@
 # Docker Compose
 compose.yaml
 compose.spider.yaml
+spider-sitemaps.yaml
 
 # File sharing
 file-share/**
