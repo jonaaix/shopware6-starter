@@ -1,23 +1,17 @@
-FROM python:3.11-alpine
+FROM node:20-alpine
 
-# System-Abhängigkeiten
-RUN apk add --no-cache \
-    gcc \
-    musl-dev \
-    libffi-dev \
-    openssl-dev
-
-# Scrapy direkt installieren
-RUN pip install --no-cache-dir scrapy
-
-# Arbeitsverzeichnis
+# Create working directory
 WORKDIR /app
 
-# Spider Code
-COPY sitemap_spider.py .
+# Install dependencies
+RUN npm init -y && \
+    npm install axios fast-xml-parser js-yaml
 
-# Entrypoint
+# Copy files
+COPY sitemap_spider.js .
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Set permissions
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

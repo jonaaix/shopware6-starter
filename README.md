@@ -351,33 +351,30 @@ In most cases, running this script is sufficient to fully deploy your changes.
 This template includes a custom spider setup that crawls all sitemap URLs to warm up the Shopware HTTP and Varnish
 cache.
 
+
 ### Setup Instructions
 
 1. Copy the example config:
 
 ```shell
 cp compose.spider.example.yaml compose.spider.yaml
+cp spider-sitemaps.example.yaml spider-sitemaps.yaml
 ```
 
-2. For **each sitemap**, define **exactly one spider container** in the `compose.spider.yaml` file.
+2. Define your sitemaps in `spider-sitemaps.yaml`. This file should contain a list of sitemap URLs to be crawled by the
+   spiders.
 
-3. Make sure to correctly set the following environment variables for each instance:
-
-```env
-SITEMAP_DOMAIN=example.com
-SITEMAP_URL=https://example.com/sitemap.xml
-```
-
-4. Start the spiders:
+3. Start the spiders:
 
 ```shell
 docker compose -f compose.spider.yaml up -d
 ```
 
-Each spider will continuously loop through all sitemap links to keep the cache warm.
+The spider will continuously loop through all sitemap links to keep the cache warm.
 
-> ⚠️ **Be careful not to overload your server** — for example, do not run 30 spiders in parallel if you have 30
+> ⚠️ **Be careful not to overload your server** — for example, do not run 30 `CONCURRENT_REQUESTS` in parallel if you have 30
 > languages.
+
 
 ---
 

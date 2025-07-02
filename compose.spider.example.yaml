@@ -1,14 +1,10 @@
 services:
-    spider_1:
+    sitemap_spider:
+        container_name: sw_spider
         image: shopware6/spider
         environment:
-            - SITEMAP_DOMAIN=domain.com
-            - SITEMAP_URL=https://domain.com/sitemap.xml
-        restart: unless-stopped
-
-    spider_2:
-        image: shopware6/spider
-        environment:
-            - SITEMAP_DOMAIN=domain.com
-            - SITEMAP_URL=https://domain.com/de/sitemap.xml
+            CONCURRENT_REQUESTS: 4
+            URL_REQUEST_TIMEOUT: 1500
+        volumes:
+            - ./spider-sitemaps.yaml:/app/sitemaps.yaml
         restart: unless-stopped
