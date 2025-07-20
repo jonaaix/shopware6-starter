@@ -43,4 +43,4 @@ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 rm composer-setup.php
 mkdir -p /tmp/composer
-chown -R www-data:www-data /tmp/composer
+chown -R shopware:shopware /tmp/composer

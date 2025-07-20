@@ -25,7 +25,7 @@ else
    echo "IGNORE THE ERROR: Base table or view not found..."
    echo ""
 
-   chown -R www-data:www-data "$TARGET_DIR"
+   chown -R shopware:shopware "$TARGET_DIR"
 
    echo "Initialization finished."
 fi

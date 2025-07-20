@@ -89,7 +89,7 @@ docker compose exec --user root php bash
 exit
 ```
 
-> From now on, you can enter the container as the default `www-data` user using:
+> From now on, you can enter the container as the default `shopware` user using:
 >
 > ```shell
 > docker compose exec php bash
@@ -433,6 +433,13 @@ bin/console cache:clear
 ---
 
 ## Helpful Tools & Migrations 🧰
+
+### 🛠️ Fix Shopware Permissions
+If you encounter permission issues, run the following command from the host:
+
+```shell
+./scripts/shopware-fix-permissions.sh
+```
 
 ### 🧾 Aliases
 
